@@ -1,4 +1,4 @@
-<nav class="bg-gray-800" x-data="{ open: false}">
+<nav class="bg-cescorp" x-data="{ open: false}">
   <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
     <div class="relative flex items-center justify-between h-16">
 
@@ -21,8 +21,8 @@
 
         {{--logotipo--}}
         <a href="/" class="flex-shrink-0 flex items-center">
-          <img class="block lg:hidden h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow">
-          <img class="hidden lg:block h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg" alt="Workflow">
+          <img class="block lg:hidden h-8 w-auto" src="{{ asset('img/logos/cescorp.png') }}" alt="Cescorp">
+          <img class="hidden lg:block h-8 w-auto" src="{{ asset('img/logos/cescorp.png') }}" alt="Cescorp">
         </a>
 
         {{--Menu lg--}}
@@ -31,7 +31,7 @@
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
             <!--<a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Dashboard</a>-->
           @foreach ($categories as $category)
-            <a href="{{route('posts.category', $category)}}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{$category->name}}</a>
+            <a href="{{route('posts.category', $category)}}" class="text-cescorp-negro hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{$category->name}}</a>
           @endforeach
           </div>
         </div>

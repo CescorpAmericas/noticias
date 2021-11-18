@@ -1,0 +1,15 @@
+
+/*texto color*/
+.text-cescorp-negro {
+	--tw-text-opacity: 1;
+	color: rgba(0, 0, 0, var(--tw-text-opacity));
+}
+/*colores*/
+.bg-cescorp {
+	--tw-bg-opacity: 1;
+	background-color: rgba(244, 179, 49, var(--tw-bg-opacity));
+}
+.bg-cescorp-negro {
+	--tw-bg-opacity: 1;
+	background-color: rgba(0, 0, 0, var(--tw-bg-opacity));
+}

@@ -18,8 +18,8 @@ class UserSeeder extends Seeder
             'name' => 'Jesus Cenobio',
             'email' => 'jesus@gmail.com',
             'password' => bcrypt('jesus123')
-        ]);
+        ])->assignRole('Admin');
         
-        User::factory(9)->create();
+        User::factory(20)->create();
     }
 }

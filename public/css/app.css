@@ -1500,6 +1500,7 @@ select {
 	--tw-border-opacity: 1;
 	border-color: rgba(156, 163, 175, var(--tw-border-opacity));
 }
+
 .bg-white {
 	--tw-bg-opacity: 1;
 	background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
