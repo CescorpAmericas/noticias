@@ -47,8 +47,8 @@ class RoleController extends Controller
         ]);
 
 
-        $roles= Role::create([
-            'name'=>$request->name
+            $roles= Role::create([
+                'name'=>$request->name
             ]);
             $roles->permissions()->sync($request->permissions);
 

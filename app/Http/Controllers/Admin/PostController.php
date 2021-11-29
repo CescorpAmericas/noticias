@@ -8,6 +8,7 @@ use App\Models\Post;
 use App\Models\Category;
 use App\Models\Tag;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Cache;
 
 use App\Http\Requests\PostRequest;
 
@@ -33,7 +34,7 @@ class PostController extends Controller
 
         return view('admin.posts.create', compact('categories', 'tags'));
     }
-
+////////////////////////////////////////////////////////////////////////////////////////////////////
     public function store(PostRequest $request)
     {
        /* return Storage::put('posts', $request->file('file'));*/
@@ -48,13 +49,15 @@ class PostController extends Controller
             ]);
         }
 
+        Cache::flush();
+
         if($request->tags){
             $post->tags()->attach($request->tags);
         }
 
         return redirect()->route('admin.posts.edit', $post);
     }
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////
     public function edit(Post $post)
     {
         $this->authorize('author', $post);
@@ -91,6 +94,8 @@ class PostController extends Controller
             $post->tags()->sync($request->tags);
         }
 
+        Cache::flush();
+
         return redirect()->route('admin.posts.edit', $post)->with('info', 'El post se actualizó con éxito');
     }
 
@@ -99,6 +104,7 @@ class PostController extends Controller
         $this->authorize('author', $post);
         
         $post->delete();
+        Cache::flush();
         return redirect()->route('admin.posts.index')->with('info', 'El post se elimino con éxito');
     }
 }
