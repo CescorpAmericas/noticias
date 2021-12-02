@@ -13,7 +13,7 @@
                             <th>ID</th>
                             <th>Nombre</th>
                             <th>Email</th>
-                            <th></th>
+                            <th colspan="2"></th>
                         </tr>
                     </thead>
 
@@ -25,6 +25,17 @@
                                 <td>{{$user->email}}</td>
                                 <td width = "10px">
                                     <a class="btn btn-primary" href="{{route('admin.users.edit', $user)}}">Editar</a>
+                                </td>
+                                <td width="10px">
+                                    @can('admin.users.destroy')
+                                        
+                                        <form action="{{route('admin.users.destroy', $user)}}" method="POST">
+                                            @csrf
+                                            @method('delete')
+    
+                                            <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                                        </form>
+                                    @endcan
                                 </td>
                             </tr>
                         @endforeach

@@ -26,6 +26,8 @@ class RoleSeeder extends Seeder
                             'description' => 'Ver listado de usuarios'])->syncRoles([$role1]);
         Permission::create(['name' => 'admin.users.edit',
                             'description' => 'Asignar un rol'])->syncRoles([$role1]);
+        Permission::create(['name' => 'admin.users.destroy',
+                            'description' => 'Eliminar un usuario'])->syncRoles([$role1]);
 
         Permission::create(['name' => 'admin.categories.index',
                             'description' => 'Ver listado de categorías'])->syncRoles([$role1, $role2]);
@@ -46,12 +48,12 @@ class RoleSeeder extends Seeder
                             'description' => 'Eliminar etíquetas'])->syncRoles([$role1]);
 
         Permission::create(['name' => 'admin.posts.index',
-                            'description' => 'Ver listado de posts'])->syncRoles([$role1, $role2]);
+                            'description' => 'Ver listado de noticias'])->syncRoles([$role1, $role2]);
         Permission::create(['name' => 'admin.posts.create',
-                            'description' => 'Crear posts'])->syncRoles([$role1, $role2]);
+                            'description' => 'Crear noticia'])->syncRoles([$role1, $role2]);
         Permission::create(['name' => 'admin.posts.edit',
-                            'description' => 'Editar posts'])->syncRoles([$role1, $role2]);
+                            'description' => 'Editar noticia'])->syncRoles([$role1, $role2]);
         Permission::create(['name' => 'admin.posts.destroy',
-                            'description' => 'Eliminar posts'])->syncRoles([$role1, $role2]);
+                            'description' => 'Eliminar noticia'])->syncRoles([$role1, $role2]);
     }
 }

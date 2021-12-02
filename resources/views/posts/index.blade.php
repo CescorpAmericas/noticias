@@ -7,9 +7,11 @@
 
             @foreach ($posts as $post)
                 <article class="w-full h-80 bg-cover bg-center @if($loop->first) md:col-span-2 @endif()" style="background-image: url(@if($post->image) {{Storage::url($post->image->url)}} @else https://cdn.pixabay.com/photo/2018/05/14/20/54/truck-3401529_960_720.jpg @endif)">
+                    <br><br><br>
+                    <br>
                     <div class="w-full h-full px-8 flex flex-col justify-center">
 
-                        <h1 class="text-4xl text-white leading-8 font-bold mt-2">
+                        <h1 class="text-2xl text-white leading-8 font-bold mt-2">
                             <a href="{{route('posts.show', $post)}}">
                                 {{$post->name}}
                             </a>

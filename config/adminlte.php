@@ -267,7 +267,6 @@ return [
            /* 'can'       =>'admin.users.index'*/
         ],
 
-        ['header' => 'ADMINISTRADOR'],
         [
             'text' => 'Categorías',
             'route'  => 'admin.categories.index',
@@ -282,15 +281,15 @@ return [
             'active' => ['admin/tags*'],
             'can'       =>'admin.tags.index'
         ],
-        ['header' => 'OPCIONES DE BLOG'],
+        ['header' => 'OPCIONES DE NOTICIA'],
         [
-            'text'       => 'Lista de post',
+            'text'       => 'Listado de noticias',
             'route'        => 'admin.posts.index',
             'icon'         => 'fas fa-fw fa-clipboard',
             'can'       =>'admin.posts.index'
         ],
         [
-            'text'       => 'Crear nuevo post',
+            'text'       => 'Crear nuevo noticia',
             'route'        => 'admin.posts.create',
             'icon'         => 'fas fa-fw fa-file',
             'can'       =>'admin.posts.create'

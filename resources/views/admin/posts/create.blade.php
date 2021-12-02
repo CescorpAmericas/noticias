@@ -3,7 +3,7 @@
 @section('title', 'CESCORP')
 
 @section('content_header')
-    <h1>Crear nuevo post</h1>
+    <h1>Crear una noticia</h1>
 @stop
 
 @section('content')
@@ -13,7 +13,7 @@
     
                 @include('admin.posts.partials.form')
 
-                {!! Form::submit('Crear post', ['class' => 'btn btn-primary']) !!}
+                {!! Form::submit('Crear noticia', ['class' => 'btn btn-primary']) !!}
 
             {!! Form::close() !!}
         </div>
