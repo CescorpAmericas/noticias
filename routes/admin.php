@@ -20,6 +20,6 @@ Route::resource('categories', CategoryController::class)->except('show')->names(
 
 Route::resource('tags', TagController::class)->except('show')->names('admin.tags');
 
-Route::resource('noticias', PostController::class)->except('show')->names('admin.posts');
+Route::resource('posts', PostController::class)->except('show')->names('admin.posts');
 
 
