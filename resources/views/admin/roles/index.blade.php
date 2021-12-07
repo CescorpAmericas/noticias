@@ -3,7 +3,11 @@
 @section('title', 'CESCORP')
 
 @section('content_header')
-    <a href="{{route('admin.roles.create')}}" class="btn btn-secondary btn-sm float-right">Nuevo rol</a>
+
+    @can('admin.roles.create')
+        <a href="{{route('admin.roles.create')}}" class="btn btn-secondary btn-sm float-right">Nuevo rol</a>
+    @endcan
+
     <h1>Lista de roles</h1>
 @stop
 
@@ -31,17 +35,19 @@
                         <td>{{$role->id}}</td>
                         <td>{{$role->name}}</td>
                         <td width="10px">
-                            <a href="{{route('admin.roles.edit', $role)}}" class="btn btn-sm btn-primary">Editar</a>
+                            @can('admin.roles.edit')
+                                <a href="{{route('admin.roles.edit', $role)}}" class="btn btn-sm btn-primary">Editar</a>
+                            @endcan
                         </td>
 
                         <td width="10px">
-                            <form action="{{route('admin.roles.destroy', $role)}}" method="POST">
-
-                                @csrf
-                                @method('DELETE')
-
-                                <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
-                            </form>
+                            @can('admin.roles.destroy')
+                                <form action="{{route('admin.roles.destroy', $role)}}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
+                                </form>
+                            @endcan
                         </td>
                     </tr>
                 @endforeach
