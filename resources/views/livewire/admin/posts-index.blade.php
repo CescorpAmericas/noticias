@@ -12,6 +12,7 @@
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
+                    <th>Status</th>
                     <th colspan="2"></th>
                 </tr>
             </thead>
@@ -20,6 +21,12 @@
                     <tr>
                         <td>{{$post->id}}</td>
                         <td>{{$post->name}}</td>
+                        @if ($post->status == 1)
+                            <td>Borrador</td>
+                        @endif
+                        @if ($post->status == 2)
+                             <td>Publicado</td>
+                         @endif
                         <td with="10px">
                             <a class="btn btn-primary btn-sm" href="{{route('admin.posts.edit', $post)}}">Editar</a>
                         </td>
